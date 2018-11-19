@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    card_view:cardCornerRadius="5dp">
+
+    <ImageView
+        android:id="@+id/img_erva"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_gravity="left"
+        android:padding="0dp"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        tools:src="@drawable/pimenta"
+        android:transitionName="erva_img"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_margin="0dp"
+        android:minWidth="@dimen/activity_horizontal_margin"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/nome_cientifico"
+            android:layout_width="@dimen/lista_margin"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:layout_marginRight="2dp"
+            android:background="@drawable/shape_cabecalho_item"
+            android:paddingLeft="5dp"
+            android:text="asdqwdasdwadasd"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/nome_cientifico_fixo"
+            android:background="@drawable/shape_body_item_meio"
+            android:layout_width="@dimen/lista_margin"
+            android:layout_height="17dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginRight="2dp"
+            android:text="Nome Cientifico"
+            android:textSize="10dp"
+            android:paddingLeft="5dp"
+            android:textStyle="italic"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintHorizontal_bias="1.0"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@+id/nome_cientifico" />
+
+        <TextView
+            android:id="@+id/nomes_popuplares"
+            android:background="@drawable/shape_body_item"
+            android:layout_width="@dimen/lista_margin"
+            android:layout_height="17dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginRight="2dp"
+            android:text="tex"
+            android:paddingLeft="5dp"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@+id/nome_cientifico_fixo" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</LinearLayout>
