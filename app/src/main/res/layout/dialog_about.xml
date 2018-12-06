@@ -1,63 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
     <ImageView
-        android:src="@drawable/logo_splashscreen"
+        android:id="@+id/imageView4"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:scaleType="center"
+        android:layout_height="288dp"
         android:background="#FFFFBB33"
-        android:contentDescription="@string/app_name" />
+        android:contentDescription="@string/app_name"
+        android:scaleType="center"
+        android:src="@drawable/logo_splashscreen"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
     <TextView
         android:id="@+id/about_a"
-        android:inputType="textEmailAddress"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginBottom="4dp"
-        android:text="Unochapecó"/>
+        android:layout_height="85dp"
+        android:layout_marginTop="8dp"
+
+        android:inputType="textEmailAddress"
+        android:text="Unochapecó"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp" />
+
     <TextView
         android:id="@+id/about_b"
-        android:inputType="textEmailAddress"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginBottom="4dp"
-        android:text="APP Desenvolvido pelos academicos de Ciência da Computação e Agronômia"/>
-    <TextView
-        android:id="@+id/about_c"
+        android:layout_height="122dp"
+        android:layout_marginTop="8dp"
         android:inputType="textEmailAddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginBottom="4dp"
-        android:text="William Alves"/>
-    <TextView
-        android:id="@+id/about_d"
-        android:inputType="textEmailAddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginBottom="4dp"
-        android:text="Lisandra Lunkes"/>
-    <TextView
-        android:id="@+id/about_e"
-        android:inputType="textEmailAddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginBottom="4dp"
-        android:text="João "/>
-</LinearLayout>
+        android:text="@string/About"
+        app:layout_constraintTop_toBottomOf="@+id/about_a"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp" />
+</android.support.constraint.ConstraintLayout>

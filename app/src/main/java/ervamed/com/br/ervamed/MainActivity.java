@@ -7,6 +7,7 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -17,7 +18,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-
+import android.view.View;
+import android.widget.Toast;
 
 
 import com.raizlabs.android.dbflow.sql.language.SQLite;
@@ -91,8 +93,6 @@ public class MainActivity extends AppCompatActivity
                 return false;
             }
         });
-
-
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -106,6 +106,7 @@ public class MainActivity extends AppCompatActivity
 //            default:
 //                // If we got here, the user's action was not recognized.
 //                // Invoke the superclass to handle it.
+//                Toast.makeText(this, item.getItemId(), Toast.LENGTH_SHORT).show();
 //                return super.onOptionsItemSelected(item);
 //
 //        }
@@ -125,7 +126,26 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        return false;
+
+        switch (menuItem.getItemId()) {
+            case R.id.nav_about:
+                Toast.makeText(this, "ABOUT", Toast.LENGTH_SHORT).show();
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
+                View mView = getLayoutInflater().inflate(R.layout.dialog_about, null);
+
+                alertDialog.setView(mView);
+                AlertDialog dialog = alertDialog.create();
+                dialog.show();
+
+                break;
+            case R.id.nav_atualizar:
+                Toast.makeText(this, "ATUALIZAR", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.nav_contato:
+                Toast.makeText(this, "CONTATO", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return true;
     }
 
     @Override
