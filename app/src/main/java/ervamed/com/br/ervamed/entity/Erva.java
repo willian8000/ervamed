@@ -11,7 +11,7 @@ public class Erva {
     private String fins_medicinais;
     private String formas_de_uso;
     private String riscos_de_uso;
-    private String imagens;
+    private Imagem[] imagens;
 
     public int getId() {
         return id;
@@ -61,11 +61,11 @@ public class Erva {
         this.riscos_de_uso = riscos_de_uso;
     }
 
-    public String getImagens() {
+    public Imagem[] getImagens() {
         return imagens;
     }
 
-    public void setImagens(String imagens) {
+    public void setImagens(Imagem[] imagens) {
         this.imagens = imagens;
     }
 }

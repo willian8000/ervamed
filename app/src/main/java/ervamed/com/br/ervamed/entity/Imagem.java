@@ -1,6 +1,6 @@
 package ervamed.com.br.ervamed.entity;
 
-public class Imagens {
+public class Imagem {
     public int id;
     private String url;
 

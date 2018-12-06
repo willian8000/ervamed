@@ -11,7 +11,6 @@ import org.w3c.dom.Text;
 import ervamed.com.br.ervamed.db.MyDatabase;
 
 @Table(database = MyDatabase.class, name = "plantas")
-
 public class ModelPlanta extends BaseModel {
 
     @PrimaryKey()
@@ -32,10 +31,6 @@ public class ModelPlanta extends BaseModel {
 
     @Column
     String riscos_de_uso;
-
-    @Column
-    String imagens;
-
 
     public int getId() {
         return id;
@@ -84,14 +79,6 @@ public class ModelPlanta extends BaseModel {
 
     public void setRiscos_de_uso(String riscos_de_uso) {
         this.riscos_de_uso = riscos_de_uso;
-    }
-
-    public String getImagens() {
-        return imagens;
-    }
-
-    public void setImagens(String imagens) {
-        this.imagens = imagens;
     }
 
 }

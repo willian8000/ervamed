@@ -20,6 +20,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.raizlabs.android.dbflow.sql.language.SQLite;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
@@ -27,6 +29,8 @@ import ervamed.com.br.ervamed.ErvaDetalhes;
 import ervamed.com.br.ervamed.MainActivity;
 import ervamed.com.br.ervamed.R;
 import ervamed.com.br.ervamed.entity.Erva;
+import ervamed.com.br.ervamed.model.ModelImagem;
+import ervamed.com.br.ervamed.model.ModelImagem_Table;
 import ervamed.com.br.ervamed.model.ModelPlanta;
 
 import static android.support.constraint.Constraints.TAG;
@@ -36,6 +40,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> im
 
     private ArrayList<ModelPlanta> ervas;
     private ArrayList<ModelPlanta> ervasFull;
+    private ArrayList<ModelImagem> listImgErva;
 
     private Context mContext;
 
@@ -53,15 +58,21 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> im
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
-    public void onBindViewHolder(@NonNull final DataAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
 
         final ModelPlanta ervaItem = ervas.get(position);
 
         holder.nomeCientifico.setText(ervas.get(position).getNome_cientifico());
         holder.nomesPopuplares.setText(ervas.get(position).getNomes_populares().replace('\n', ' '));
-        holder.imageErva.setImageResource(R.drawable.pimenta);
+        //holder.imageErva.setImageResource(R.drawable.pimenta);
 
-        holder.imageErva.setTransitionName("transition" + position);
+        listImgErva = (ArrayList<ModelImagem>) new SQLite().select(ModelImagem_Table.url).from(ModelImagem.class).where(ModelImagem_Table.id_erva_id.eq(ervaItem.getId())).queryList();
+        Log.d("URL_PRINC", listImgErva.get(0).getUrl());
+
+        Glide.with(mContext).load(listImgErva.get(0).getUrl()).into(holder.imageErva);
+        //img_erva
+
+        //holder.imageErva.setTransitionName("transition" + position);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,6 +85,14 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> im
                 bundle.putString("FinsMedicinais", ervaItem.getFins_medicinais().replace('\n', ' ').replace("  ","") );
                 bundle.putString("FormasUso", ervaItem.getFormas_de_uso().replace('\n', ' ').replace("  ","") );
                 bundle.putString("RiscosUso", ervaItem.getRiscos_de_uso().replace('\n', ' ').replace("  ","") );
+                bundle.putInt("ErvaID", ervaItem.getId());
+
+                listImgErva = (ArrayList<ModelImagem>) new SQLite().select().from(ModelImagem.class).where(ModelImagem_Table.id_erva_id.eq(ervaItem.getId())).queryList();
+                //bundle.putString("IMG", listImgErva.get(0).getEncodedImage() );
+
+
+                //Log.d("BASE64", listImgErva.get(0).getEncodedImage());
+                //Toast.makeText(mContext, listImgErva.get(0).getEncodedImage(), Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(mContext, ErvaDetalhes.class);
                 intent.putExtras(bundle);
@@ -130,17 +149,12 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> im
         private TextView nomeCientifico;
         private TextView nomesPopuplares;
         private ImageView imageErva;
-//        private TextView finsMedicinais;
 
         public ViewHolder(View itemView) {
             super(itemView);
-
             imageErva = itemView.findViewById(R.id.img_erva);
             nomeCientifico = itemView.findViewById(R.id.nome_cientifico);
             nomesPopuplares = itemView.findViewById(R.id.nomes_popuplares);
-//            finsMedicinais = itemView.findViewById(R.id.fins_medicinais);
-
         }
     }
-
 }

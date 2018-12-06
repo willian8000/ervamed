@@ -9,9 +9,4 @@
         android:bottomRightRadius="1dp"
         android:bottomLeftRadius="1dp"
         android:radius="45dp"/>
-
-
-
-
-
 </shape>

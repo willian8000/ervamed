@@ -17,7 +17,6 @@ public interface ervasAPI {
     @Headers("Accept:application/json")
     @GET("plantas")
     Call<JSONResponse> getJSON();
-    //Call<List<Erva>> getErvas();
 
     Retrofit RETROFIT = new Retrofit.Builder()
             .baseUrl("http://crs.unochapeco.edu.br/zend/plantas-medicinais/public/")
