@@ -24,6 +24,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ErvaDetalhes"></activity>
+        <activity android:name=".Contato"></activity>
     </application>
 
 </manifest>

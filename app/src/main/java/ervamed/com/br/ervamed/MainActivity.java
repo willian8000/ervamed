@@ -1,8 +1,11 @@
 package ervamed.com.br.ervamed;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -17,6 +20,7 @@ import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 
 
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -27,9 +31,17 @@ import android.widget.Toast;
 import com.raizlabs.android.dbflow.sql.language.SQLite;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import ervamed.com.br.ervamed.adapter.DataAdapter;
+import ervamed.com.br.ervamed.entity.JSONResponse;
+import ervamed.com.br.ervamed.model.ModelImagem;
 import ervamed.com.br.ervamed.model.ModelPlanta;
+import ervamed.com.br.ervamed.service.ervasAPI;
+import ervamed.com.br.ervamed.ui.SplashActivity;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{
@@ -72,6 +84,16 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        /*
+         * Verifica se existe conexão para habilitar o botao de atualização
+         */
+        if (!verificaConexao()){
+            Menu navView = navigationView.getMenu();
+            MenuItem navItemView = navView.findItem(R.id.nav_atualizar);
+            navItemView.setEnabled(false);
+        }
+
+
         showPlantas();
     }
 
@@ -98,22 +120,6 @@ public class MainActivity extends AppCompatActivity
         return super.onCreateOptionsMenu(menu);
     }
 
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        switch (item.getItemId()) {
-//            case R.id.action_search:
-//                // User chose the "Settings" item, show the app settings UI...
-//                return true;
-//
-//            default:
-//                // If we got here, the user's action was not recognized.
-//                // Invoke the superclass to handle it.
-//                Toast.makeText(this, item.getItemId(), Toast.LENGTH_SHORT).show();
-//                return super.onOptionsItemSelected(item);
-//
-//        }
-//    }
-
     public void showPlantas(){
         recyclerView = findViewById(R.id.card_recycler_view);
         recyclerView.setHasFixedSize(true);
@@ -127,6 +133,16 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    public boolean verificaConexao() {
+        boolean conectado;
+        ConnectivityManager conectivtyManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (conectivtyManager.getActiveNetworkInfo() != null && conectivtyManager.getActiveNetworkInfo().isAvailable() && conectivtyManager.getActiveNetworkInfo().isConnected()) {
+            conectado = true;
+        } else {
+            conectado = false;
+        }
+        return conectado;
+    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -151,9 +167,16 @@ public class MainActivity extends AppCompatActivity
                 break;
 
             case R.id.nav_atualizar:
-                Toast.makeText(this, "ATUALIZAR", Toast.LENGTH_SHORT).show();
+                LoadErvas loadErvas = new LoadErvas();
+                loadErvas.loadErvas();
+
+                Toast.makeText(this, "Atualizando Ervas", Toast.LENGTH_LONG).show();
+
                 break;
             case R.id.nav_contato:
+                Intent intent = new Intent(MainActivity.this, Contato.class);
+                this.startActivity(intent);
+
                 Toast.makeText(this, "CONTATO", Toast.LENGTH_SHORT).show();
                 break;
         }

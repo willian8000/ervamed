@@ -6,8 +6,8 @@
         android:endColor="#20BF82"
         />
     <corners
-        android:topLeftRadius="45dp"
-        android:bottomRightRadius="45dp"
-        android:bottomLeftRadius="45dp"
-        android:radius="45dp"/>
+        android:topLeftRadius="10dp"
+        android:bottomRightRadius="10dp"
+        android:bottomLeftRadius="10dp"
+        android:radius="10dp"/>
 </shape>

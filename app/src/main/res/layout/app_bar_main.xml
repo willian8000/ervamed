@@ -21,15 +21,13 @@
 
             <ImageView
                 android:id="@+id/imageButton"
-                android:layout_width="@android:dimen/app_icon_size"
-                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_width="100dp"
+                android:layout_height="25dp"
                 android:layout_gravity="left"
                 android:background="#20BF82"
-                android:padding="12dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/logo_toolbar"
-                tools:layout_editor_absoluteX="12dp"
-                tools:layout_editor_absoluteY="12dp" />
+                android:scaleType="centerInside"
+                android:src="@drawable/logo_topo"
+                 />
 
         </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>

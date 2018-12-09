@@ -64,15 +64,11 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> im
 
         holder.nomeCientifico.setText(ervas.get(position).getNome_cientifico());
         holder.nomesPopuplares.setText(ervas.get(position).getNomes_populares().replace('\n', ' '));
-        //holder.imageErva.setImageResource(R.drawable.pimenta);
 
         listImgErva = (ArrayList<ModelImagem>) new SQLite().select(ModelImagem_Table.url).from(ModelImagem.class).where(ModelImagem_Table.id_erva_id.eq(ervaItem.getId())).queryList();
         Log.d("URL_PRINC", listImgErva.get(0).getUrl());
 
         Glide.with(mContext).load(listImgErva.get(0).getUrl()).into(holder.imageErva);
-        //img_erva
-
-        //holder.imageErva.setTransitionName("transition" + position);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,11 +84,6 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> im
                 bundle.putInt("ErvaID", ervaItem.getId());
 
                 listImgErva = (ArrayList<ModelImagem>) new SQLite().select().from(ModelImagem.class).where(ModelImagem_Table.id_erva_id.eq(ervaItem.getId())).queryList();
-                //bundle.putString("IMG", listImgErva.get(0).getEncodedImage() );
-
-
-                //Log.d("BASE64", listImgErva.get(0).getEncodedImage());
-                //Toast.makeText(mContext, listImgErva.get(0).getEncodedImage(), Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(mContext, ErvaDetalhes.class);
                 intent.putExtras(bundle);

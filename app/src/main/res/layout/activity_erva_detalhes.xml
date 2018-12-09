@@ -23,6 +23,8 @@
         android:textColor="#ffffff"
         android:text="Não nos responsabilizamos pelos efeitos do uso das informações aqui apresentadas."
         android:textStyle="italic|bold"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:textSize="12dp"
         android:textAlignment="center"
         tools:layout_editor_absoluteY="291dp"
