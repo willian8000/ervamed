@@ -1,6 +1,8 @@
 package ervamed.com.br.ervamed;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -120,7 +122,9 @@ public class MainActivity extends AppCompatActivity
 
         list = (ArrayList<ModelPlanta>) new SQLite().select().from(ModelPlanta.class).queryList();
         adapter = new DataAdapter(this, list);
+        recyclerView.addItemDecoration(new SimpleDividerItemDecoration(getApplicationContext()));
         recyclerView.setAdapter(adapter);
+
     }
 
 
@@ -128,16 +132,24 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
         switch (menuItem.getItemId()) {
+            case R.id.nav_referencias:
+                AlertDialog.Builder alertDialogR = new AlertDialog.Builder(MainActivity.this);
+                View mViewR = getLayoutInflater().inflate(R.layout.referencias_bibliograficas, null);
+                alertDialogR.setView(mViewR);
+                AlertDialog dialogR = alertDialogR.create();
+                dialogR.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialogR.show();
+                break;
+
             case R.id.nav_about:
-                Toast.makeText(this, "ABOUT", Toast.LENGTH_SHORT).show();
                 AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
                 View mView = getLayoutInflater().inflate(R.layout.dialog_about, null);
-
                 alertDialog.setView(mView);
                 AlertDialog dialog = alertDialog.create();
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.show();
-
                 break;
+
             case R.id.nav_atualizar:
                 Toast.makeText(this, "ATUALIZAR", Toast.LENGTH_SHORT).show();
                 break;

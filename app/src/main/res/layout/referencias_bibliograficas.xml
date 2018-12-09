@@ -9,7 +9,7 @@
 
     <TextView
         android:textColor="#ffffff"
-        android:id="@+id/about_creditos"
+        android:id="@+id/referencias_bibligraficas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -17,7 +17,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="Créditos"
+        android:text="Referências bibliográficas"
         android:textSize="15dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,29 +27,15 @@
 
     <TextView
         android:textColor="#ffffff"
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Alunos de Agronomia"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/about_creditos" />
-
-
-    <TextView
-        android:textColor="#ffffff"
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:text="Cleiton Zanatta"
+        android:text="https://www.tuasaude.com/malva/"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/referencias_bibligraficas" />
 
     <TextView
         android:textColor="#ffffff"
@@ -59,7 +45,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:text="Natan Goellner"
+        android:text="https://www.mundoboaforma.com.br/espinheira-santa-para-que-serve-beneficios-e-efeitos-colaterais/"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -71,7 +57,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:text="Vinicius Trindade"
+        android:text="https://www.tuasaude.com/c/plantas-medicinais/"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -83,7 +69,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:text="Murilo Brusamarello"
+        android:text="https://www.mundoboaforma.com.br/13-beneficios-da-salvia-para-que-serve-e-propriedades/"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
@@ -95,7 +81,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:text="Lucas Favero"
+        android:text="https://pt.wikipedia.org/wiki/Salvia_officinalis"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
@@ -107,7 +93,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:text="Hierocles Lavall"
+        android:text="https://www.minhavida.com.br/alimentacao/tudo-sobre/17095-canela"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -119,7 +105,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:text="Guilherme Celuppii"
+        android:text="https://www.greenme.com.br/usos-beneficios/6097-manjerona-beneficios-usos-contraindicacoes"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
@@ -131,7 +117,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:text="Lucas Tormem"
+        android:text="http://saude.ig.com.br/bemestar/guiaplantasmedicinais/melissa/ref1237837170238.html"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
@@ -143,7 +129,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:text="Luis Lopes"
+        android:text="https://www.tuasaude.com/c/plantas-medicinais/"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
@@ -155,7 +141,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:text="Willian Brandão"
+        android:text="https://www.infoescola.com/medicina-alternativa/plantas-medicinais/"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
@@ -163,26 +149,13 @@
         android:textColor="#ffffff"
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
-        android:layout_height="20dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:text="Professor: Gean Lopes da Luz"
+        android:text="https://mundoeducacao.bol.uol.com.br/saude-bem-estar/riscos-uso-plantas-medicinais.htm"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
-
-    <TextView
-        android:textColor="#ffffff"
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="20dp"
-        android:text="Alunos de Ciência da Computação e Sistemas de Informação"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <TextView
         android:textColor="#ffffff"
@@ -192,9 +165,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:text="Lisandra Lunkes Balsan"
+        android:text="https://www.greenme.com.br/remedios-caseiros/5834-10-plantas-medicinais-comum-ter-em-casa"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <TextView
         android:textColor="#ffffff"
@@ -204,57 +177,11 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:text="Eloan dos Santos"
+        android:text=""
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
-    <TextView
-        android:textColor="#ffffff"
-        android:id="@+id/textView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:text="João Oliveira"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
-    <TextView
-        android:textColor="#ffffff"
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:text="William Alves da Silva"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
-
-    <TextView
-        android:textColor="#ffffff"
-        android:id="@+id/textView20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Professor: Cezar Junior de Souza"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
-
-    <TextView
-        android:textColor="#ffffff"
-        android:id="@+id/textView19"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:text=""
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
 
 </android.support.constraint.ConstraintLayout>

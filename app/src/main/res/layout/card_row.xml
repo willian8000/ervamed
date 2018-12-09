@@ -8,17 +8,16 @@
     android:layout_marginTop="5dp"
     android:layout_marginLeft="5dp"
     android:layout_marginRight="5dp"
+    android:layout_marginBottom="5dp"
     card_view:cardCornerRadius="5dp">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/img_erva"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:layout_gravity="left"
-        android:padding="0dp"
-        android:scaleType="fitXY"
-        android:adjustViewBounds="true"
-        android:transitionName="erva_img"/>
+        android:scaleType="centerCrop"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_launcher_background"/>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="wrap_content"
@@ -31,27 +30,24 @@
             android:id="@+id/nome_cientifico"
             android:layout_width="@dimen/lista_margin"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="2dp"
-            android:layout_marginRight="2dp"
-            android:background="@drawable/shape_cabecalho_item"
             android:paddingLeft="5dp"
-            android:text="asdqwdasdwadasd"
-            android:textColor="#ffffff"
+            android:text="Texto nome cientifico"
+            android:textColor="#20BF82"
             android:textStyle="bold"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/nome_cientifico_fixo"
-            android:background="@drawable/shape_body_item_meio"
             android:layout_width="@dimen/lista_margin"
-            android:layout_height="17dp"
-            android:layout_marginEnd="2dp"
-            android:layout_marginRight="2dp"
-            android:text="Nome Cientifico"
-            android:textSize="10dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="0dp"
             android:paddingLeft="5dp"
-            android:textStyle="italic"
+            android:text="Nomes populares"
+            android:textSize="10dp"
+            android:textStyle="italic|bold"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintHorizontal_bias="1.0"
             card_view:layout_constraintStart_toStartOf="parent"
@@ -59,14 +55,15 @@
 
         <TextView
             android:id="@+id/nomes_popuplares"
-            android:background="@drawable/shape_body_item"
             android:layout_width="@dimen/lista_margin"
             android:layout_height="17dp"
-            android:layout_marginEnd="2dp"
-            android:layout_marginRight="2dp"
-            android:text="tex"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="0dp"
             android:paddingLeft="5dp"
+            android:text="tex"
             card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintHorizontal_bias="0.0"
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toBottomOf="@+id/nome_cientifico_fixo" />
 
